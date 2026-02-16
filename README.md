@@ -1,4 +1,4 @@
-# Pisi Linux Web Greeter
+# Pisi Linux ligthdm nody-greeter teması
 
 Pisi Linux için modern ve kullanıcı dostu bir web greeter teması.
 
@@ -13,12 +13,18 @@ Pisi Linux için modern ve kullanıcı dostu bir web greeter teması.
 
 ## Kurulum
 
-1. Tema dosyalarını LightDM teması dizinine kopyalayın:
+1. Pisi Linux'ta lightdm ve nody-greeter'i yükleyin:
+   ```bash
+   sudo pisi it lightdm
+   sudo pisi it nody-greeter
+   ```
+
+2. Tema dosyalarını LightDM teması dizinine kopyalayın:
    ```bash
    sudo cp -r /path/to/pisi-theme /usr/share/web-greeter/themes/pisi
    ```
 
-2. LightDM yapılandırma dosyasında temayı seçin:
+3. LightDM yapılandırma dosyasında temayı seçin:
    ```bash
    sudo nano /etc/lightdm/lightdm.conf
    ```
@@ -30,7 +36,7 @@ Pisi Linux için modern ve kullanıcı dostu bir web greeter teması.
    greeter-theme=pisi
    ```
 
-3. LightDM'i yeniden başlatın:
+4. LightDM'i yeniden başlatın:
    ```bash
    sudo systemctl restart lightdm
    ```
