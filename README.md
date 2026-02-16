@@ -36,7 +36,8 @@ Pisi Linux için modern ve kullanıcı dostu bir web greeter teması.
    ```
    Tema. içinde web-greeter.yml dosyasını açın ve "theme" olarak ayarlayın.
    ```bash
-   theme: pisilinux-lightdm-theme
+   sudo nano /etc/lightdm/web-greeter.yml açın ve 
+   theme: pisilinux-lightdm-theme olacak şekilde ayarlayın.
    ```
 
 
