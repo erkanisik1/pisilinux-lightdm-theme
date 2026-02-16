@@ -1,0 +1,55 @@
+@import url("topbar.css");
+@import url("login.css");
+
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    background: url('../media/wallpapers/4.jpg') no-repeat center center fixed;
+    background-size: cover;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    overflow: hidden;
+}
+
+
+/* Sanal Klavye */
+.simple-keyboard {
+    position: fixed;
+    bottom: 0;
+   
+    width: 90%;
+    background-color: #1a1a1a;
+    padding: 10px;
+    box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.5);
+    z-index: 9999;
+    display: none; 
+}
+
+/* Klavye butonları */
+.simple-keyboard .hg-button {
+    background: #c72e2e;
+    color: #807d7d;
+    border: 1px solid #444;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 3px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.simple-keyboard .hg-button:hover {
+    background: #444;
+}
+
+.simple-keyboard .hg-button:active {
+    background: #555;
+}
