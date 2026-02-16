@@ -45,7 +45,7 @@ Pisi Linux için modern ve kullanıcı dostu bir web greeter teması.
 
 4. LightDM'i yeniden başlatın:
    ```bash
-   sudo systemctl restart lightdm
+   sudo service lightdm restart
    ```
 
 ## Özelleştirme
