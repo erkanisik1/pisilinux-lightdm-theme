@@ -1,5 +1,7 @@
 # Pisi Linux ligthdm nody-greeter teması
 
+![Pisi Linux LightDM Teması](snapshot.jpg)
+
 Pisi Linux için modern ve kullanıcı dostu bir web greeter teması.
 
 ## Özellikler
