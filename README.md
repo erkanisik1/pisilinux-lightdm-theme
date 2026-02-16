@@ -21,10 +21,10 @@ Pisi Linux için modern ve kullanıcı dostu bir web greeter teması.
 
 2. Tema dosyalarını LightDM teması dizinine kopyalayın:
    ```bash
-   sudo cp -r /path/to/pisi-theme /usr/share/web-greeter/themes/pisi
+   sudo cp -r /path/to/pisi-theme /usr/share/web-greeter/themes/pisilinux-lightdm-theme
    ```
 
-3. LightDM yapılandırma dosyasında temayı seçin:
+3. LightDM yapılandırma dosyasında sessionu seçin:
    ```bash
    sudo nano /etc/lightdm/lightdm.conf
    ```
@@ -33,65 +33,17 @@ Pisi Linux için modern ve kullanıcı dostu bir web greeter teması.
    ```
    [Seat:*]
    greeter-session=nody-greeter
-   greeter-theme=pisi
    ```
+   Tema. içinde web-greeter.yml dosyasını açın ve "theme" olarak ayarlayın.
+   ```bash
+   theme: pisilinux-lightdm-theme
+   ```
+
 
 4. LightDM'i yeniden başlatın:
    ```bash
    sudo systemctl restart lightdm
    ```
-
-## Dosya Yapısı
-
-```
-pisi/
-├── index.html              # Ana giriş sayfası
-├── assets/
-│   ├── css/
-│   │   ├── main.css           # Ana stil dosyası
-│   │   └── simple-keyboard.css # Sanal klavye stilleri
-│   ├── js/
-│   │   ├── main.js            # Ana JavaScript mantığı
-│   │   └── simple-keyboard.js # Sanal klavye kütüphanesi
-│   └── media/
-│       ├── icons/             # Sistem ikonları
-│       └── pisi-logo-magenta.png # Pisi logosu
-└── README.md               # Bu dosya
-```
-
-## Teknik Özellikler
-
-### LightDM Entegrasyonu
-- `lightdm.authenticate()` ile kullanıcı doğrulaması
-- `lightdm.respond()` ile şifre gönderimi
-- `lightdm.login()` ile oturum başlatma
-- `lightdm.start_session()` ile oturum yönetimi
-- Callback fonksiyonları: `show_prompt`, `authentication_complete`
-
-### JavaScript Kütüphaneleri
-- **jQuery 3.7.1**: DOM manipülasyonu ve olay yönetimi
-- **Simple Keyboard**: Sanal klavye desteği
-
-### Tarayıcı Uyumluluğu
-- Modern tarayıcılar (Chrome, Firefox, Edge, Safari)
-- CSS Grid ve Flexbox desteği
-- ES6+ JavaScript özellikleri
-
-## Kullanım
-
-1. **Giriş Yapma**:
-   - Kullanıcı listesinden kullanıcı seçin
-   - Şifre alanına parolanızı girin
-   - Giriş Yap butonuna tıklayın veya Enter tuşuna basın
-
-2. **Oturum Seçimi**:
-   - Üst kısımdaki oturum dropdown'ından masaüstü ortamını seçin
-
-3. **Dil Değiştirme**:
-   - Sağ üst kısımdaki TR/EN butonları ile arayüz dilini değiştirin
-
-4. **Sanal Klavye**:
-   - Klavye ikonuna tıklayarak sanal klavyeyi açın/kapatın
 
 ## Özelleştirme
 
@@ -111,24 +63,6 @@ CSS değişkenleri `main.css` dosyasında özelleştirilebilir:
 - `suspend.svg` - Uyku ikonu
 - `keyboard.svg` - Sanal klavye ikonu
 
-## Hata Ayıklama
-
-Konsolda şu log mesajları kullanılır:
-- `Lightdm objesi:` - LightDM nesnesi durumu
-- `Kullanıcılar:` - Kullanıcı listesi
-- `show_prompt çağrıldı:` - Şifre isteği durumu
-- `authentication_complete çağrıldı:` - Giriş doğrulama durumu
-
-## Geliştirme
-
-### Test Ortamı
-Tarayıcıda test için mock API kullanılabilir:
-```javascript
-// Konsolda çalıştırın
-window.testAuth(); // Manuel şifre beklemesi başlatır
-window.testDifferentAuth(); // Farklı authentication denemeleri
-```
-
 ### Katkıda Bulunma
 1. Bu depoyu fork'layın
 2. Yeni özellik branch'ı oluşturun
@@ -144,14 +78,8 @@ MIT Lisansı - detaylar için LICENSE dosyasına bakın.
 - **Sürüm**: 1.0.0
 - **LightDM Uyumluluğu**: Web Greeter
 - **Minimum Sistem**: Pisi Linux 2.0+
-- **Tarayıcı**: Modern tarayıcılar
 
 ## İletişim
-
 Sorunlar ve öneriler için:
 - GitHub Issues: Proje deposunda issue oluşturun
 - Pisi Forumları: Resmi Pisi destek kanalları
-
----
-
-*Pisi Linux Web Greeter - Modern ve Güvenli Giriş Deneyimi*
