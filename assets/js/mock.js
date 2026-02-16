@@ -1,4 +1,3 @@
- // Mock API Module (Sadece tarayıcıda test için)
 export function initMockAPI() {
     if (typeof lightdm === 'undefined') {
         window.lightdm = {
