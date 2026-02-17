@@ -78,7 +78,7 @@ button:hover {
     margin-bottom: 15px;
 }
 
-img:hover{background: #4C4C4C;padding: 10px;}
+
 
 @keyframes shake {
     0%, 100% { transform: translateX(0); }

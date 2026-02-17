@@ -123,6 +123,17 @@ const initBattery = () => {
     }
 };
 
+const updateUserAvatar = (userName) => {
+    const user = lightdm.users.find(u => (u.username || u.name) === userName);
+    const avatarElement = $('#user-avatar');
+    
+    if (user && user.image) {
+        avatarElement.attr('src', user.image);
+    } else {
+        avatarElement.attr('src', 'logotype-pisi.svg'); // varsayılan logo
+    }
+};
+
 $(document).ready(function() {
     if (lightdm.authentication_complete) {
         lightdm.authentication_complete.connect(authentication_complete);
@@ -140,6 +151,7 @@ $(document).ready(function() {
                 `<option value="${s.key}">${s.name}</option>`
             ).join('');
             $('#session-list').html(sessionOptions);
+            updateUserAvatar(userName);
         }
         
         if (lightdm.users && lightdm.users.length > 0) {
@@ -171,6 +183,7 @@ $(document).ready(function() {
         lightdm.authenticate($(this).val());
         
         $('#password').focus();
+        updateUserAvatar($(this).val());
     });
 
     $('#login-button').on('click', function() {
